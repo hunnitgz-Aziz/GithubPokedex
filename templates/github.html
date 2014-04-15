@@ -1,0 +1,86 @@
+<!Doctype html>
+<html>
+<head>
+	<title>Github Pokedex</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animations.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/foundation.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/foundation.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='js/modernizr.js') }}">
+	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+	<style type="text/css">
+		body{
+			background: url('../static/img/cubes.png') repeat;
+			font-family: 'Press Start 2P', cursive;
+		}
+
+	</style>
+</head>
+<body>
+	<section class="row pokegit">
+		<article class="small-12 medium-6 large-6 columns">
+			<div id="avi" class="fadeIn">
+				<img class="avatar" src="{{ avatar }}">
+				<img src="{{ url_for('static', filename='img/lights.png') }}">
+			</div>
+		</article>
+		<article class="avatar small-12 medium-6 large-6 columns">
+			<div id="pokedata" class="stretchLeft">
+				<h3 class="info">PokeGit Data</h3>
+				<p>User: {{ name }}</p>
+				<p>Name: {{ git_name }}</p>
+				<p>Region: {{ user_area }}</p>
+				<p>Bio: {{ user_bio }}</p>
+				<h3 class="info">Top 5 Repositories</h3>
+				<ul class="repo-list">
+					{% for n in repo_names %}
+					<li>{{n}}</li>
+					{% endfor %}
+				</ul>
+				<span data-tooltip class="has-tip [tip-bottom]" title="Search again"><a  href="/"><img src="{{ url_for('static', filename='img/re-search.png') }}"/></a></span>
+			</div>
+		</article>
+	</section>
+	<script src="{{ url_for('static', filename='js/foundation.tooltip.js') }}"></script>
+	<script>
+		 $(document).foundation();
+	</script>
+	<script>
+	$(window).scroll(function() {
+		$('#avi').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+400) {
+				$(this).addClass("fadeIn");
+			}
+		});
+	});
+</script>
+<script>
+	$('#avi').click(function() {
+		$(this).addClass("fadeIn");
+	});
+</script>
+<script>
+	$(window).scroll(function() {
+		$('#pokedata').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+400) {
+				$(this).addClass("stretchLeft");
+			}
+		});
+	});
+</script>
+<script>
+	$('#pokedata').click(function() {
+		$(this).addClass("stretchLeft");
+	});
+</script>
+</body>
+</html>

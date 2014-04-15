@@ -1,0 +1,46 @@
+body{
+	font-family: 'Press Start 2P', cursive;
+    background-color: #ecf0f1;
+}
+.repo-list {
+    list-style-type: none;
+    margin-left: 0;
+}
+article.small-12.medium-12.large-12.columns {
+    text-align: center;
+}
+section.row.pokesearch {
+    padding: 0 50px;
+}
+
+div.small-12.medium-12.large-12.columns {
+    text-align: center;
+    padding-top: 20px;
+}
+
+section.row.poketitle {
+    padding-top: 100px;
+}
+
+section.row.pokegit {
+    padding-top: 80px;
+}
+
+.info{
+	font-family: 'Press Start 2P', cursive;
+}
+
+#avi{
+	visibility: hidden;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.avatar{
+	padding-bottom: 10px;
+}
+
+article.small-12.medium-6.large-6.columns {
+    padding-bottom: 20px;
+}
